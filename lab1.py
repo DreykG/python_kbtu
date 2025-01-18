@@ -1,1 +1,2 @@
-Hello emae
+Hello = 1
+print("Hi")
