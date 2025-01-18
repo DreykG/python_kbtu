@@ -1,1 +1,3 @@
-print("Hello, World!") #Output in terminal "Hello, World!"
+import sys
+
+print(sys.version)
