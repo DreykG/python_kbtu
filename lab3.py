@@ -1,7 +1,13 @@
-def rev(stroka):
-    string = stroka.split()
-    for i in range(len(string)-1,-1,-1):
-        print(string[i],end=" ")
-    
-stroka = input("Input string\n")
-rev(stroka)
+def check(numbers):
+    a = False
+    for i in range(0,len(numbers)-1):
+        if int(numbers[i]) == 3 and int(numbers[i+1]) == 3:
+            a = True
+            break
+    return a
+            
+list = input("Input numbers:\n").split()
+if check(list):
+    print("True")
+else:
+    print("False")
