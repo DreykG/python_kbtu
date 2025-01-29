@@ -1,5 +1,5 @@
-def transfer(gram):
-    return (float(gram) * 28.3495231)
+def transfer(degree):
+    return (float(5/9)*(int(degree) - 32))
 
-gram = float(input("Input count of gramms\n"))
-print("Count of ounces =",transfer(gram))
+f = int(input("How much degree by Faranheit?"))
+print(round(transfer(f),1), "by Celcius")
