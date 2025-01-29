@@ -1,11 +1,7 @@
-from itertools import permutations
-
-def generate_per(string):
-    perms = permutations(string)
-    for perm in perms:
-        print("".join(perm)) #Преобразование в строку:
-                            #Каждая перестановка — это кортеж символов. 
-                            #Мы объединяем их в строку с помощью "".join().
-        
+def rev(stroka):
+    string = stroka.split()
+    for i in range(len(string)-1,-1,-1):
+        print(string[i],end=" ")
+    
 stroka = input("Input string\n")
-generate_per(stroka)
+rev(stroka)
