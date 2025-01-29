@@ -1,12 +1,11 @@
-def take_it_easy(x):
-    x2 = round(x**(1/2))
-    z=True
-    for i in range(2,x2+1):
-        if x%i == 0:
-            return 0
-    print(x)
+from itertools import permutations
+
+def generate_per(string):
+    perms = permutations(string)
+    for perm in perms:
+        print("".join(perm)) #Преобразование в строку:
+                            #Каждая перестановка — это кортеж символов. 
+                            #Мы объединяем их в строку с помощью "".join().
         
-list = input("Input numbers:\n").split()
-for i in list:
-    take_it_easy(int(i))
-    
+stroka = input("Input string\n")
+generate_per(stroka)
