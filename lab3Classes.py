@@ -22,6 +22,6 @@ print(f"Shape area: {my_cl.area()}")
 
 my_cl = Square(5)
 print(f"Square area: {my_cl.area()}")
-
+#good
 my_cl = Rectangle(5,4)
 print(f"Rectangle area: {my_cl.area()}")
