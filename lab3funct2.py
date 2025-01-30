@@ -1,11 +1,21 @@
 from random import randint
-def good(movies,janr):
-    sublist = []
-    for i in range(0,15):
-        if movies[i]["category"] == janr:
-            sublist.append(movies[i]["name"])
+def good(movies,n):
+    av_imdb = 0
+    list = []
+    for i in range(0,n):
+        name = input()
+        list.append(name)
+        #print(list)
     
-    print(sublist)
+    for i in range(0,15):
+        for j in range(0, len(list)):
+            if movies[i]["name"] == list[j]:
+                av_imdb += movies[i]["imdb"]
+                #print(movies[i]["imdb"])
+                
+    av_imdb = av_imdb/n
+    print("The average imdb score of these films:")
+    print(round(av_imdb,1))
             
 
 
@@ -89,6 +99,6 @@ movies = [
 }
 ]
 
-janr = input("Input janr of film:\n")
-print(f"Films with category {janr}:")
-good(movies,janr)
+n = int(input("Input count of films:\n"))
+good(movies,n)
+
