@@ -1,42 +1,9 @@
-class Bank:
-    def __init__(self, owner, balance):
-        self.owner = owner
-        self.balance = balance
-    
-    def deposit(self):
-        self.money = int(input("How much do you want to deposit your balance?\n"))
-        self.balance += self.money
-        
-    def withdraw(self):
-        while True:
-            self.money = int(input("How much do you want to withdraw your balance?\n"))
-            if self.money > self.balance:
-                print("On your balance no so much money!")
-            else:
-                self.balance -= self.money
-                break
-        
-    def check(self):
-        print(f"Your balance: {self.balance}")
-        
+a = lambda x: x>1 and all(x%i != 0 for i in range(2, int(x**0.5)+1))
+# -all- checks, that all coundtition in () were True
+list2 = list(map(int, input("Input your numbers:\n").split()))
 
-name = input("What is your name?\n")
-balance = int(input("What is your balance?\n"))
-my_bank = Bank(name,balance)
-while True:
-    z = input('''What do you want to do?
-            -deposite
-            -withdraw
-            -check
-            -exit\n''')
-    if z == "deposite":
-        my_bank.deposit()
-        
-    if z == "check":
-        my_bank.check()
-        
-    if z == "withdraw":
-        my_bank.withdraw()
-        
-    if z == "exit":
-        break
+prime_num = list(filter(a,list2))#a-name of funct. list2-name of objects, with we work.
+print("Prime numbers from previous lust:")
+print(prime_num)
+
+
