@@ -1,11 +1,12 @@
 from random import randint
-x = randint(0,14)
 def good(movies):
+    sublist = []
+    for i in range(0,15):
+        if movies[i]["imdb"] > 5.5:
+            sublist.append(movies[i]["name"])
     
-    if movies[x]["imdb"] > 5.5:
-        return True
-    else:
-        return False
+    print(sublist)
+            
 
 
 
@@ -88,8 +89,5 @@ movies = [
 }
 ]
 
-
-if good(movies):
-    print(f"Film {movies[x]["name"]} is quite well")
-else:
-    print(f"Film {movies[x]["name"]} is bad")
+print("The list of films, where imdb > 5.5:")
+good(movies)
