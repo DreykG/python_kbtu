@@ -1,45 +1,42 @@
-class Points:
-    def __init__(self,x1,y1,x2,y2):
-        self.x1 = x1
-        self.y1 = y1
-        self.x2 = x2
-        self.y2 = y2
+class Bank:
+    def __init__(self, owner, balance):
+        self.owner = owner
+        self.balance = balance
     
-    def show(self):
-        print(f"Coordinates of point1 = ({self.x1},{self.y1})")
-        print(f"Coordinates of point2 = ({self.x2},{self.y2})")
+    def deposit(self):
+        self.money = int(input("How much do you want to deposit your balance?\n"))
+        self.balance += self.money
         
-    def move(self):
-        m = int(input("What is point do you want to change? 1 or 2\n"))
-        if m == 1:
-            self.x1 = int(input("Input X1-coord\n"))
-            self.y1 = int(input("Input Y1-coord\n"))
-        if m == 2:
-            self.x2 = int(input("Input X2-coord\n"))
-            self.y2 = int(input("Input Y2-coord\n"))
-    
-    def lenght(self):
-        self.lenght = round(float(     (((self.x2 - self.x1)**2)  + ((self.y2 - self.y1)**2))**0.5),1)
-        print(f"Lenght between 2 points = {self.lenght}")
+    def withdraw(self):
+        while True:
+            self.money = int(input("How much do you want to withdraw your balance?\n"))
+            if self.money > self.balance:
+                print("On your balance no so much money!")
+            else:
+                self.balance -= self.money
+                break
         
-x1 = int(input("Input X1-coord\n"))
-y1 = int(input("Input Y1-coord\n"))
-x2 = int(input("Input X2-coord\n"))
-y2 = int(input("Input Y2-coord\n"))
+    def check(self):
+        print(f"Your balance: {self.balance}")
+        
 
-newp = Points(x1,y1,x2,y2)
+name = input("What is your name?\n")
+balance = int(input("What is your balance?\n"))
+my_bank = Bank(name,balance)
 while True:
-    print("Input action, which you want to complete:")
-    print("show")
-    print("move")
-    print("lenght")
-    print("exit")
-    dd = input()
-    if dd == "show":
-        newp.show()
-    if dd == "move":
-        newp.move()
-    if dd == "lenght":
-        newp.lenght()
-    if dd == "exit":
+    z = input('''What do you want to do?
+            -deposite
+            -withdraw
+            -check
+            -exit\n''')
+    if z == "deposite":
+        my_bank.deposit()
+        
+    if z == "check":
+        my_bank.check()
+        
+    if z == "withdraw":
+        my_bank.withdraw()
+        
+    if z == "exit":
         break
