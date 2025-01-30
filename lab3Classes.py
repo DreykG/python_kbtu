@@ -1,17 +1,27 @@
-class strings:
-    def __init__(self): #run when class start creating
-        self.s = input("Input string:\n")
+class Shape:
+    def area(self):
+        return 0
+
+class Square(Shape):  #nasleduetsya from Shape
+    def __init__(self, lenght):
+        self.lenght = lenght
         
-    def printstring(self):
-        print(f"Your string: {self.s}")
+    def area(self):
+        return self.lenght * self.lenght
+    
+class Rectangle(Shape):
+    def __init__(self, lenght, weight):
+        self.lenght = lenght
+        self.weight = weight
         
-    def reverstr(self):
-        print(f"reversed string: {self.s[::-1]}")
-        
-    def lenghtstr(self):
-        print(f"Lenght of string = {len(self.s)}")
-        
-my_class = strings()
-my_class.printstring()
-my_class.reverstr()
-my_class.lenghtstr()
+    def area(self):
+        return 2*(self.lenght+self.weight)
+    
+my_cl = Shape()
+print(f"Shape area: {my_cl.area()}")
+
+my_cl = Square(5)
+print(f"Square area: {my_cl.area()}")
+
+my_cl = Rectangle(5,4)
+print(f"Rectangle area: {my_cl.area()}")
