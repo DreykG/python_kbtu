@@ -1,11 +1,6 @@
-def palidrome(string):
-    if string == string[::-1]:
-        return True
-    else:
-        return False
-
-s = input("Input your word\n")
-if palidrome(s):
-    print("Yes")
-else:
-    print("No")
+def histo(list):
+    for i in list:
+        print(i*"*")
+        
+list = list(map(int, input("Input your numbers:\n").split()))
+histo(list)
