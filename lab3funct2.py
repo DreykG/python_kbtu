@@ -1,20 +1,14 @@
 from random import randint
-def good(movies,n):
+def good(movies,cat):
     av_imdb = 0
-    list = []
-    for i in range(0,n):
-        name = input()
-        list.append(name)
-        #print(list)
-    
+    n=0
     for i in range(0,15):
-        for j in range(0, len(list)):
-            if movies[i]["name"] == list[j]:
-                av_imdb += movies[i]["imdb"]
-                #print(movies[i]["imdb"])
+        if movies[i]["category"] == cat:
+            av_imdb += movies[i]["imdb"]
+            n+=1
                 
     av_imdb = av_imdb/n
-    print("The average imdb score of these films:")
+    print("The average imdb score of this category:")
     print(round(av_imdb,1))
             
 
@@ -99,6 +93,6 @@ movies = [
 }
 ]
 
-n = int(input("Input count of films:\n"))
-good(movies,n)
+cat = input("Input category of films:\n")
+good(movies,cat)
 
