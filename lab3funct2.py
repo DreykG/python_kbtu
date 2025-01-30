@@ -1,8 +1,8 @@
 from random import randint
-def good(movies):
+def good(movies,janr):
     sublist = []
     for i in range(0,15):
-        if movies[i]["imdb"] > 5.5:
+        if movies[i]["category"] == janr:
             sublist.append(movies[i]["name"])
     
     print(sublist)
@@ -89,5 +89,6 @@ movies = [
 }
 ]
 
-print("The list of films, where imdb > 5.5:")
-good(movies)
+janr = input("Input janr of film:\n")
+print(f"Films with category {janr}:")
+good(movies,janr)
