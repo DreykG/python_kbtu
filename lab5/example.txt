@@ -10,6 +10,9 @@ Usernames:
 - user_001
 - Admin_99
 - regexMaster_123
+- sys_admin
+- it_specialist
+- video_redactor_well
 
 
 abbb
@@ -34,7 +37,7 @@ The price of the item is $19.99, but with a discount, it’s now $14.99.
 Today's date is 17/02/2025, and another format is 2025-02-17.  
 Here’s some HTML: <div class="container">Hello, World!</div>  
 Watch out for special characters like !@#$%^&*()_+={}[]|:;"'<>,.?/
-
+fiab
 A regular expression (or RE) specifies a set of strings that matches it; 
 the functions in this module let you check if a particular string matches a given regular expression (or if a given regular expression matches a particular string, which comes down to the same thing). 
 Regular expressions can be concatenated to form new regular expressions; 
